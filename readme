@@ -1,0 +1,3 @@
+To get this working in your infinitas app, all you need to do is copy the files into the dir /plugins/wysiwyg_ck_editor
+
+still need to do some work on the plugin installer, so for now you will need to add 'ck_editor' onto the list of config options in core_configs 
