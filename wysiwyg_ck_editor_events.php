@@ -8,6 +8,10 @@
 		}
 
 		function onRequireJavascriptToLoad(&$event, $data){
+			if(Configure::read('Wysiwyg.editor') != 'ck_editor'){
+				return false;
+			}
+
 			switch(true){
 				case isset($data['admin']) && $data['admin']:
 				case $data['action'] == 'edit':
