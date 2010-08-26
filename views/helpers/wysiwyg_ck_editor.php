@@ -44,7 +44,7 @@
 			$did = $lines = '';
 
 			foreach (explode('.', $fieldName) as $v) {
-				$did .= ucfirst($v);
+				$did .= ucfirst(Inflector::camelize($v));
 			}
 
 			$options = array_merge($this->_defaults, $config);
