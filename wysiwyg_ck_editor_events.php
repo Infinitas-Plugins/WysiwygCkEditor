@@ -11,14 +11,14 @@
 			if(Configure::read('Wysiwyg.editor') != 'ck_editor'){
 				return false;
 			}
-
-			switch(true){
-				case isset($data['admin']) && $data['admin']:
-				case $data['action'] == 'edit':
+			
+			switch(isset($data['admin']) && $data['admin']){
+				case $data['action'] == 'admin_edit':
+				case $data['action'] == 'admin_add':
 					return '/wysiwyg_ck_editor/js/ckeditor';
 					break;
 			}
 
 			return false;
 		}
-	}
+	} 
