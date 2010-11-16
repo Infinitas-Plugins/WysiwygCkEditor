@@ -58,7 +58,7 @@
 			$lines = implode(', ', $lines);
 			App::import('Helper', 'Html');
 			$this->Html = new HtmlHelper();
-			return $this->Html->scriptBlock("CKEDITOR.replace( '$did', { $lines });");
+			return $this->Html->scriptBlock("CKEDITOR.replace( '$did', { $lines });", array('inline' => false));
 		}
 	}
 ?>
