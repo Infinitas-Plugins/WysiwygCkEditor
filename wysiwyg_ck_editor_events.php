@@ -3,11 +3,11 @@
 	 * events for ck_editor
 	 */
 	class WysiwygCkEditorEvents{
-		function onRegisterWysiwyg(&$event){
+		function onRegisterWysiwyg($event){
 			return 'ck_editor';
 		}
 
-		function onRequireJavascriptToLoad(&$event, $data){
+		function onRequireJavascriptToLoad($event, $data){
 			if(Configure::read('Wysiwyg.editor') != 'ck_editor'){
 				return false;
 			}
