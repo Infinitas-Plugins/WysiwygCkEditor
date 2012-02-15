@@ -20,15 +20,16 @@
 	 * Redistributions of files must retain the above copyright notice.
 	 */
 
-	class WysiwygCkEditorHelper extends Helper{
+	App::uses('InfinitasHelper', 'Libs.View');
+	class WysiwygCkEditorHelper extends AppHelper {
 		/**
 		 * @var array
 		 * @access protected
 		 */
-		var $_defaults = array();
+		public $_defaults = array();
 
 		public $helpers = array(
-			'html'
+			'Html'
 		);
 
 		/**
@@ -40,7 +41,7 @@
 		 *
 		 * @return string the javascript code to load the editor.
 		 */
-		function editor($fieldName = null, $config = array()){
+		public function editor($fieldName = null, $config = array()){
 			$did = $lines = '';
 
 			foreach (explode('.', $fieldName) as $v) {
@@ -56,9 +57,6 @@
 			}
 
 			$lines = implode(', ', $lines);
-			App::import('Helper', 'Html');
-			$this->Html = new HtmlHelper();
 			return $this->Html->scriptBlock("CKEDITOR.replace( '$did', { $lines });", array('inline' => false));
 		}
 	}
-?>
