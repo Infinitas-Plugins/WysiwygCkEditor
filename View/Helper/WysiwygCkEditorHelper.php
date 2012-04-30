@@ -55,6 +55,7 @@
 			foreach ($options as $option => $value) {
 				$lines[] = $option . ' : "' . $value . '"';
 			}
+			$lines[] = 'customConfig:"/wysiwyg_ck_editor/js/config.js"';
 
 			$lines = implode(', ', $lines);
 			return $this->Html->scriptBlock("CKEDITOR.replace( '$did', { $lines });", array('inline' => false));
