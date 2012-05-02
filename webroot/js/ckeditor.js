@@ -6,7 +6,7 @@
 			revision: '4891',
 			_: {},
 			status: 'unloaded',
-			basePath: window.location.origin + '/wysiwyg_ck_editor/js/',
+			basePath: '/wysiwyg_ck_editor/js/',
 			getUrl: function (d) {
 				if(d.indexOf('://') == -1 && d.indexOf('/') !== 0) d = this.basePath + d;
 				if(this.timestamp && d.charAt(d.length - 1) != '/') d += (d.indexOf('?') >= 0 ? '&' : '?') + 't=' + this.timestamp;
