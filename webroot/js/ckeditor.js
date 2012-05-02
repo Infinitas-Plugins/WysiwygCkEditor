@@ -214,7 +214,7 @@
 			var f = b.match(/rv:([\d\.]+)/);
 			if(f) {
 				f = f[1].split('.');
-				e = f[0] * 10000 + (f[1] || 0) * 100 + +(f[2] || 0);
+				e = f[0] * 10000 + (f[1] || 0) * 100 + (+(f[2] || 0));
 			}
 		}
 		if(d.opera) e = parseFloat(c.version());
