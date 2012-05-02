@@ -21,7 +21,6 @@
 			};
 		}
 		
-		debug(a.basePath);
 		return a;
 	})();
 	var a = CKEDITOR;

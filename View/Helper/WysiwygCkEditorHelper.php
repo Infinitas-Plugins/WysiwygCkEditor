@@ -58,6 +58,16 @@
 			$lines[] = 'customConfig:"/wysiwyg_ck_editor/js/config.js"';
 
 			$lines = implode(', ', $lines);
-			return $this->Html->scriptBlock("CKEDITOR.replace( '$did', { $lines });", array('inline' => false));
+			return $this->Html->scriptBlock(
+				sprintf(
+					"CKEDITOR.replace( '%s', { %s });",
+					$did,
+					$lines
+				), 
+				array(
+					'inline' => false,
+					'block' => 'scripts_for_layout'
+				)
+			);
 		}
 	}
