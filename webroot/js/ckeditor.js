@@ -2074,7 +2074,7 @@
 		customConfig: 'config.js',
 		autoUpdateElement: true,
 		baseHref: '',
-		contentsCss: a.basePath + 'contents.css',
+		contentsCss: a.basePath + 'contents.get.css',
 		contentsLangDirection: 'ltr',
 		language: '',
 		defaultLanguage: 'en',

@@ -2,7 +2,7 @@
 	/**
 	 * events for ck_editor
 	 */
-	class WysiwygCkEditorEvents{
+	class WysiwygCkEditorEvents extends AppEvents {
 		function onRegisterWysiwyg($event){
 			return 'ck_editor';
 		}
@@ -20,5 +20,20 @@
 			}
 
 			return false;
+		}
+		
+		public function onSetupRoutes($event, $data = null) {
+			InfinitasRouter::connect(
+				'/wysiwyg_ck_editor/js/contents.get.css',
+				array(
+					'plugin' => 'themes',
+					'controller' => 'themes',
+					'action' => 'frontend_css',
+					'admin' => false
+				),
+				array(
+					'ext' => 'css'
+				)
+			);
 		}
 	} 
