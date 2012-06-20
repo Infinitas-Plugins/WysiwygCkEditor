@@ -41,7 +41,7 @@
 		 *
 		 * @return string the javascript code to load the editor.
 		 */
-		public function editor($fieldName = null, $config = array()){
+		public function editor($fieldName = null, $config = array()) {
 			$did = $lines = '';
 
 			foreach (explode('.', $fieldName) as $v) {
