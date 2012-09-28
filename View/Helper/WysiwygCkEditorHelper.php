@@ -20,7 +20,7 @@
 	 * Redistributions of files must retain the above copyright notice.
 	 */
 
-	App::uses('InfinitasHelper', 'Libs.View');
+	App::uses('InfinitasHelper', 'Libs.View/Helper');
 	class WysiwygCkEditorHelper extends AppHelper {
 		/**
 		 * @var array
@@ -63,7 +63,7 @@
 					"CKEDITOR.replace( '%s', { %s });",
 					$did,
 					$lines
-				), 
+				),
 				array(
 					'inline' => false,
 					'block' => 'scripts_for_layout'
