@@ -12,14 +12,13 @@
 				return false;
 			}
 
-			switch(isset($data['admin']) && $data['admin']) {
-				case $data['action'] == 'admin_edit':
-				case $data['action'] == 'admin_add':
-					return 'WysiwygCkEditor.ckeditor';
-					break;
+			if(isset($Event->Handler->request->params['admin']) && $Event->Handler->request->params['admin']) {
+				if(in_array($Event->Handler->request->params['action'], array('admin_edit', 'admin_add'))) {
+					return array(
+						'WysiwygCkEditor.ckeditor'
+					);
+				}
 			}
-
-			return false;
 		}
 
 		public function onSetupRoutes(Event $Event) {
