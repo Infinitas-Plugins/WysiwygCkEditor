@@ -1,5 +1,7 @@
 <?php
-class AllWysiwygCkEditorTestsTest extends PHPUnit_Framework_TestSuite {
+App::uses('AllTestsBase', 'Test/Lib');
+
+class AllWysiwygCkEditorTestsTest extends AllTestsBase {
 
 /**
  * Suite define the tests for this suite
