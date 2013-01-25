@@ -45,9 +45,16 @@ class WysiwygCkEditorHelper extends AppHelper {
 			$did .= ucfirst(Inflector::camelize($v));
 		}
 
-		$lines = array();
+		$config = array_merge(array(
+			'extraPlugins' => 'infinitas'
+		));
 
+		$lines = array();
 		foreach ($config as $option => $value) {
+			if (is_array($value)) {
+				$lines[] = $option . ' : ' . json_encode($value);
+				continue;
+			}
 			$lines[] = $option . ' : "' . $value . '"';
 		}
 		$lines[] = 'customConfig:"/wysiwyg_ck_editor/js/config.js"';
